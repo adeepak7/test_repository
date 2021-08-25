@@ -10,8 +10,16 @@ parser = argparse.ArgumentParser()
 
 # Required parameters
 
+"""
+The following 2 lines are overriding the optional group. Don't use it.
 parser.add_argument('-message_from', metavar="message_from", type=str, help="Enter Sender's Name", required=True)
 parser.add_argument('-input_message_file', metavar="input_message_file", type=str, help="Enter Sender's Message", required=True)
+"""
+
+required = parser.add_argument_group('required arguments')
+required.add_argument('-msg_from', '--message_from', metavar="message_from", type=str, help="Enter Sender's Name", required=True)
+required.add_argument('-inp_msg_file', '--input_message_file', metavar="input_message_file", type=str, help="Enter Sender's Message", required=True)
+
 
 # Optional parameters
 
